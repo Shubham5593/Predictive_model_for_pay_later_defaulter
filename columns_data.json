@@ -1,0 +1,56 @@
+{
+    "SEX": {
+        "male":1,
+        "female":2
+    },
+    "EDUCATION": {
+        "School Graduate":1,
+        "University Graduate":2,
+        "Highschool Graduate":3,
+        "Others":4
+    },
+    "MARRIAGE": {
+        "married":1,
+        "single":2,
+        "others":3
+    },
+    "PAY": {
+        "Use of revolving credit":0,
+        "payment delay for one month":1,
+        "payment delay for two months":2,
+        "payment delay for three months":3,
+        "payment delay for four months":4,
+        "payment delay for five months":5,
+        "payment delay for six months":6,
+        "payment delay for seven months":7,
+        "payment delay for eight months":8,
+        "payment delay for nine months and above":9,
+        "No consumption or no use of credit":-2,
+        "pay duly":-1
+    },
+    "columns": [
+        "LIMIT_BAL",
+        "SEX",
+        "EDUCATION",
+        "MARRIAGE",
+        "AGE",
+        "PAY_1",
+        "PAY_2",
+        "PAY_3",
+        "PAY_4",
+        "PAY_5",
+        "PAY_6",
+        "BILL_AMT1",
+        "BILL_AMT2",
+        "BILL_AMT3",
+        "BILL_AMT4",
+        "BILL_AMT5",
+        "BILL_AMT6",
+        "PAY_AMT1",
+        "PAY_AMT2",
+        "PAY_AMT3",
+        "PAY_AMT4",
+        "PAY_AMT5",
+        "PAY_AMT6"
+    ]
+}
