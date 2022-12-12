@@ -1,0 +1,165 @@
+<html>
+<head>
+<title> Credit card defaulter prediction </title>
+<style>
+    input[type=text]{
+        width: 300px;
+        height: 40px;
+        font-size: 12pt;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    input[type=submit]{
+        background-color: #62529c;
+        border: none;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body style="background-color: rgb(159, 159, 159);">
+<center>
+    <form action="/predict_defaulters" method ="POST">
+
+        <h1> Model For Credit card defaulter prediction :</h1>
+        <br>
+        
+        <label>Credit card Limit Balance : </label><input type="text"  name ="limit_bal"><br><br>
+
+        <label>Gender : </label><select name="sex" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="female" > Female </option >
+            <option value="male" > male </option >
+        </select><br><br>
+        
+        <label>Education : </label><select name="education" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="School Graduate" > School level Graduation </option >
+            <option value="University Graduate" > University level Graduation </option >
+            <option value="Highschool Graduate" > High school level Graduation </option >
+            <option value="Others" > Other </option >
+        </select><br><br>
+
+        <label>Martial Status : </label><select name="marriage" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="married" > Married </option >
+            <option value="single" > Single </option >
+            <option value="others" > Other </option >
+        </select><br><br>
+
+        <label>Age : </label><input type="text"  name ="age"><br><br>
+
+        <label>Payment status for last month :</label><select name="pay_1" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="pay duly" > pay duly/properly </option >
+            <option value="No consumption or no use of credit" > No consumption or no use of credit </option >
+            <option value="Use of revolving credit" > Use of revolving credit </option >
+            <option value="payment delay for one month" > payment delay for one month </option >
+            <option value="payment delay for two month" > payment delay for two month </option >
+            <option value="payment delay for three month" > payment delay for three month </option >
+            <option value="payment delay for four month" > payment delay for four month </option >
+            <option value="payment delay for five month" > payment delay for five month </option >
+            <option value="payment delay for six month" > payment delay for six month </option >
+            <option value="payment delay for seven month" > payment delay for seven month </option >
+            <option value="payment delay for eight month" > payment delay for eight month </option >
+            <option value="payment delay for nine months and above" > payment delay for nine months and above </option >
+        </select><br><br>
+
+        <label>Payment status for second last month :</label><select name="pay_2" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="pay duly" > pay duly/properly </option >
+            <option value="No consumption or no use of credit" > No consumption or no use of credit </option >
+            <option value="Use of revolving credit" > Use of revolving credit </option >
+            <option value="payment delay for one month" > payment delay for one month </option >
+            <option value="payment delay for two month" > payment delay for two month </option >
+            <option value="payment delay for three month" > payment delay for three month </option >
+            <option value="payment delay for four month" > payment delay for four month </option >
+            <option value="payment delay for five month" > payment delay for five month </option >
+            <option value="payment delay for six month" > payment delay for six month </option >
+            <option value="payment delay for seven month" > payment delay for seven month </option >
+            <option value="payment delay for eight month" > payment delay for eight month </option >
+            <option value="payment delay for nine months and above" > payment delay for nine months and above </option >
+        </select><br><br>
+
+        <label>Payment status for third last month :</label><select name="pay_3" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="pay duly" > pay duly/properly </option >
+            <option value="No consumption or no use of credit" > No consumption or no use of credit </option >
+            <option value="Use of revolving credit" > Use of revolving credit </option >
+            <option value="payment delay for one month" > payment delay for one month </option >
+            <option value="payment delay for two month" > payment delay for two month </option >
+            <option value="payment delay for three month" > payment delay for three month </option >
+            <option value="payment delay for four month" > payment delay for four month </option >
+            <option value="payment delay for five month" > payment delay for five month </option >
+            <option value="payment delay for six month" > payment delay for six month </option >
+            <option value="payment delay for seven month" > payment delay for seven month </option >
+            <option value="payment delay for eight month" > payment delay for eight month </option >
+            <option value="payment delay for nine months and above" > payment delay for nine months and above </option >
+        </select><br><br>
+
+        <label>Payment status for fourth last month :</label><select name="pay_4" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="pay duly" > pay duly/properly </option >
+            <option value="No consumption or no use of credit" > No consumption or no use of credit </option >
+            <option value="Use of revolving credit" > Use of revolving credit </option >
+            <option value="payment delay for one month" > payment delay for one month </option >
+            <option value="payment delay for two month" > payment delay for two month </option >
+            <option value="payment delay for three month" > payment delay for three month </option >
+            <option value="payment delay for four month" > payment delay for four month </option >
+            <option value="payment delay for five month" > payment delay for five month </option >
+            <option value="payment delay for six month" > payment delay for six month </option >
+            <option value="payment delay for seven month" > payment delay for seven month </option >
+            <option value="payment delay for eight month" > payment delay for eight month </option >
+            <option value="payment delay for nine months and above" > payment delay for nine months and above </option >
+        </select><br><br>
+
+        <label>Payment status for fifth last month :</label><select name="pay_5" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="pay duly" > pay duly/properly </option >
+            <option value="No consumption or no use of credit" > No consumption or no use of credit </option >
+            <option value="Use of revolving credit" > Use of revolving credit </option >
+            <option value="payment delay for one month" > payment delay for one month </option >
+            <option value="payment delay for two month" > payment delay for two month </option >
+            <option value="payment delay for three month" > payment delay for three month </option >
+            <option value="payment delay for four month" > payment delay for four month </option >
+            <option value="payment delay for five month" > payment delay for five month </option >
+            <option value="payment delay for six month" > payment delay for six month </option >
+            <option value="payment delay for seven month" > payment delay for seven month </option >
+            <option value="payment delay for eight month" > payment delay for eight month </option >
+            <option value="payment delay for nine months and above" > payment delay for nine months and above </option >
+        </select><br><br>
+
+        <label>Payment status for sixth last month :</label><select name="pay_6" style="width:300px; height: 40px; box-sizing: border-box; border-radius: 4px;">
+            <option value="pay duly" > pay duly/properly </option >
+            <option value="No consumption or no use of credit" > No consumption or no use of credit </option >
+            <option value="Use of revolving credit" > Use of revolving credit </option >
+            <option value="payment delay for one month" > payment delay for one month </option >
+            <option value="payment delay for two month" > payment delay for two month </option >
+            <option value="payment delay for three month" > payment delay for three month </option >
+            <option value="payment delay for four month" > payment delay for four month </option >
+            <option value="payment delay for five month" > payment delay for five month </option >
+            <option value="payment delay for six month" > payment delay for six month </option >
+            <option value="payment delay for seven month" > payment delay for seven month </option >
+            <option value="payment delay for eight month" > payment delay for eight month </option >
+            <option value="payment delay for nine months and above" > payment delay for nine months and above </option >
+        </select><br><br>
+
+        <label>Amount of bill generated for last month : </label><input type="text"  name ="bill_amt1"><br><br>
+        <label>Amount of bill generated for second last month : </label><input type="text"  name ="bill_amt2"><br><br>
+        <label>Amount of bill generated for third last month : </label><input type="text"  name ="bill_amt3"><br><br>
+        <label>Amount of bill generated for fourth last month : </label><input type="text"  name ="bill_amt4"><br><br>
+        <label>Amount of bill generated for fifth last month : </label><input type="text"  name ="bill_amt5"><br><br>
+        <label>Amount of bill generated for sixth last month : </label><input type="text"  name ="bill_amt6"><br><br>
+
+        <label>Amount of paid against bill of last month : </label><input type="text"  name ="pay_amt1"><br><br>
+        <label>Amount of paid against bill of second last month : </label><input type="text"  name ="pay_amt2"><br><br>
+        <label>Amount of paid against bill of third last month : </label><input type="text"  name ="pay_amt3"><br><br>
+        <label>Amount of paid against bill of fourth last month : </label><input type="text"  name ="pay_amt4"><br><br>
+        <label>Amount of paid against bill of fifth last month : </label><input type="text"  name ="pay_amt5"><br><br>
+        <label>Amount of paid against bill of sixth last month : </label><input type="text"  name ="pay_amt6"><br><br>
+
+        
+        <input type="submit">
+        <br><br>
+        
+    </form>
+</center>
+    
+</body>
+</html>
